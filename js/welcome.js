@@ -1,6 +1,5 @@
 const greetingForm = document.querySelector(".greeting-form");
 const greetingInput = greetingForm.querySelector(".greeting-input");
-const greetingSubmit = greetingForm.querySelector(".greeting-submit");
 const greeting = document.querySelector("h1.greeting");
 
 const showGreeting = (name) => {
@@ -10,6 +9,11 @@ const showGreeting = (name) => {
 const handleGreetingSubmit = (e) => {
   e.preventDefault();
   const name = greetingInput.value;
+  if (!name.trim()) {
+    greetingInput.value = null;
+    alert("Enter your name!");
+    return;
+  }
 
   greetingForm.classList.add("hidden");
   showGreeting(name);
