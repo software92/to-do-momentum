@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Momentum</title>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- 1.1 welcome.js
+      - form, h1을 default:hiiden으로 사용하지 않았을 때, 페이지 새로고침시 마다 form형태가 나타났다 사라짐 -->
+    <form method="get" class="greeting-form hidden">
+      <input type="text" autofocus placeholder="Name" class="greeting-input" />
+      <input type="submit" class="greeting-submit" value="Login" />
+    </form>
+    <h1 class="greeting hidden"></h1>
+    <script src="js/welcome.js"></script>
+  </body>
 </html>
