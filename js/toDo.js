@@ -4,13 +4,27 @@ const toDoList = document.querySelector(".to-do__list");
 
 let toDos = [];
 
-const handleCheckBtn = (e) => {
+const saveLS = () => {
+  localStorage.setItem("toDos", JSON.stringify(toDos));
+};
+const handleDoneBtn = (e) => {
   e.preventDefault();
-  // const id = Number(e.target.parentNode.id);
+  const {
+    target: { parentNode: item },
+  } = e;
 
-  // console.log(id);
-  // const a = toDos.filter((obj) => id !== obj.id);
-  // console.log(a);
+  const toNumber = Number(item.id);
+
+  console.log(item.id);
+  item.classList.toggle("done");
+  toDos.map((toDo) => {
+    if (toDo.id === toNumber) {
+      toDo.isDone = !toDo.isDone;
+    }
+  });
+
+  saveLS();
+  console.log(toDos);
 };
 const handleDelBtn = (e) => {
   e.preventDefault();
@@ -20,30 +34,34 @@ const handleDelBtn = (e) => {
   toDos = filterToDos;
   toDoList.removeChild(e.target.parentNode);
 
-  localStorage.setItem("toDos", JSON.stringify(toDos));
+  saveLS();
 };
 
 const showToDos = (obj) => {
   const toDoItem = document.createElement("li");
   const toDoSpan = document.createElement("span");
-  const toDoCheck = document.createElement("button");
+  const toDoDone = document.createElement("button");
   const toDoDel = document.createElement("button");
 
   toDoItem.id = obj.id;
 
-  toDoItem.classList.add("to-do__Item");
-  toDoCheck.classList.add("to-do__check");
+  toDoItem.classList.add("to-do__item");
+  toDoDone.classList.add("to-do__done");
   toDoDel.classList.add("to-do__del");
 
+  if (obj.isDone === true) {
+    toDoItem.classList.add("done");
+  }
+
   toDoSpan.innerHTML = obj.toDo;
-  toDoCheck.innerHTML = "Check";
+  toDoDone.innerHTML = "Done";
   toDoDel.innerHTML = "Del";
 
-  toDoCheck.addEventListener("click", handleCheckBtn);
+  toDoDone.addEventListener("click", handleDoneBtn);
   toDoDel.addEventListener("click", handleDelBtn);
 
   toDoItem.appendChild(toDoSpan);
-  toDoItem.appendChild(toDoCheck);
+  toDoItem.appendChild(toDoDone);
   toDoItem.appendChild(toDoDel);
   toDoList.appendChild(toDoItem);
 };
@@ -65,22 +83,19 @@ const handleToDoSubmit = (e) => {
   const toDo = toDoInput.value;
   toDoInput.value = null;
 
-  let toDoObj;
+  let toDoObj = {
+    toDo,
+    isDone: false,
+  };
 
   if (!toDos.length) {
-    toDoObj = {
-      id: 1,
-      toDo,
-    };
+    toDoObj.id = 1;
   } else {
-    toDoObj = {
-      id: toDos[toDos.length - 1].id + 1,
-      toDo,
-    };
+    toDoObj.id = toDos[toDos.length - 1].id + 1;
   }
 
   toDos.push(toDoObj);
-  localStorage.setItem("toDos", JSON.stringify(toDos));
+  saveLS();
   showToDos(toDoObj);
 };
 
