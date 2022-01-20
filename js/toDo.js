@@ -15,7 +15,6 @@ const handleDoneBtn = (e) => {
 
   const toNumber = Number(item.id);
 
-  console.log(item.id);
   item.classList.toggle("done");
   toDos.map((toDo) => {
     if (toDo.id === toNumber) {
@@ -24,7 +23,6 @@ const handleDoneBtn = (e) => {
   });
 
   saveLS();
-  console.log(toDos);
 };
 const handleDelBtn = (e) => {
   e.preventDefault();
