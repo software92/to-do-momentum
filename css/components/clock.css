@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.clock {
+  font-family: "Anton", sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 50px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  animation: seconds 1s ease-out infinite;
+}
+
+@keyframes seconds {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 0.9;
+    transform: scale(1, 1);
+  }
+}
