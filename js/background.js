@@ -6,5 +6,6 @@ const chosenImg = `imgs/${
 const body = document.querySelector("body");
 const backImg = document.createElement("img");
 
+backImg.classList.add("background");
 backImg.src = chosenImg;
 body.append(backImg);
