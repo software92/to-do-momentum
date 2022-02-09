@@ -2,6 +2,7 @@
 
 @import "components/background.css";
 @import "components/clock.css";
+@import "components/weather.css";
 
 * {
   box-sizing: border-box;
