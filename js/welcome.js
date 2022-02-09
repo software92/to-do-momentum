@@ -3,7 +3,7 @@ const greetingInput = greetingForm.querySelector(".greeting-input");
 const greeting = document.querySelector("h1.greeting");
 
 const showGreeting = (name) => {
-  greeting.innerHTML = name;
+  greeting.innerHTML = `Hi! ${name}`;
   greeting.classList.remove("hidden");
 };
 const handleGreetingSubmit = (e) => {

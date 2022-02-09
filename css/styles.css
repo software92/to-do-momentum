@@ -3,6 +3,7 @@
 @import "components/background.css";
 @import "components/clock.css";
 @import "components/weather.css";
+@import "components/welcome.css";
 
 * {
   box-sizing: border-box;
@@ -14,4 +15,13 @@
 
 .done {
   text-decoration: line-through;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
