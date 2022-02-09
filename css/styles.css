@@ -4,6 +4,7 @@
 @import "components/clock.css";
 @import "components/weather.css";
 @import "components/welcome.css";
+@import "components/toDo.css";
 
 * {
   box-sizing: border-box;
