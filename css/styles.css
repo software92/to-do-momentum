@@ -14,10 +14,6 @@
   display: none;
 }
 
-.done {
-  text-decoration: line-through;
-}
-
 body {
   position: relative;
   display: flex;

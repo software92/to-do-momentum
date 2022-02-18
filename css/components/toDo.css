@@ -18,3 +18,33 @@
 .to-do-input::placeholder {
   font-size: 20px;
 }
+
+.to-do__list {
+  position: absolute;
+  top: 350px;
+  padding: 20px;
+  width: 330px;
+}
+.to-do__item {
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: center;
+
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+.to-do__item span {
+  width: 80%;
+  margin-left: 5px;
+}
+
+.done {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+.done span {
+  text-decoration: line-through;
+}
