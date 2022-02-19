@@ -1,3 +1,14 @@
+.greeting-form {
+  position: absolute;
+  top: 200px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.greeting-form input:first-child {
+  border: none;
+}
+
 .greeting {
   position: absolute;
   top: 150px;
