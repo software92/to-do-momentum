@@ -2,10 +2,29 @@ const greetingForm = document.querySelector(".greeting-form");
 const greetingInput = greetingForm.querySelector(".greeting-input");
 const greeting = document.querySelector("h1.greeting");
 
+const handleLogout = () => {
+  localStorage.removeItem("username");
+  location.reload();
+};
+
 const showGreeting = (name) => {
+  const btnContainer = document.createElement("div");
+  const logoutBtn = document.createElement("div");
+
+  btnContainer.classList.add("button-container");
+  logoutBtn.classList.add("button");
+
+  logoutBtn.innerHTML = "Logout";
+
+  logoutBtn.addEventListener("click", handleLogout);
+
+  btnContainer.append(logoutBtn);
+
   greeting.innerHTML = `Hi! ${name}`;
+  greeting.append(btnContainer);
   greeting.classList.remove("hidden");
 };
+
 const handleGreetingSubmit = (e) => {
   e.preventDefault();
   const name = greetingInput.value;
