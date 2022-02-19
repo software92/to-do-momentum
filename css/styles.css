@@ -5,6 +5,7 @@
 @import "components/weather.css";
 @import "components/welcome.css";
 @import "components/toDo.css";
+@import "components/message.css";
 
 * {
   box-sizing: border-box;
@@ -21,4 +22,5 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }

@@ -6,7 +6,7 @@ const saying = [
   "공부를 열심히 하는 건 어렵지만, 공부를 방해하는 것을 안하는 것은 쉽다",
   "잡생각이 들고 나에 대해 의심이 드는 순간을 하루 이틀 30일 버텨야 공부가 시작된다",
 ];
-const messages = document.querySelector("h2.messages");
+const messages = document.querySelector(".messages");
 
 const selectNum = Math.floor(Math.random() * saying.length);
 
