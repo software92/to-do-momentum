@@ -1,4 +1,4 @@
-@import "/css/reset.css";
+@import "reset.css";
 
 @import "components/background.css";
 @import "components/clock.css";
